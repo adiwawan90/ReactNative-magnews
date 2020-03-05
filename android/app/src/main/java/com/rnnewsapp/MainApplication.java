@@ -1,4 +1,4 @@
-package com.rnnewsapp;
+package com.magnews;
 
 import android.app.Application;
 import android.content.Context;

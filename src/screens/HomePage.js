@@ -97,22 +97,19 @@ class HomePage extends Component {
     return this.state.isLoading ? (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <ActivityIndicator size="large" color="#330066" animating />
+        <Text style={{fontWeight: 'bold'}}>Load Data</Text>
       </View>
     ) : (
       <View>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView>
-          {/* <ScrollView> */}
-          {/* <Header /> */}
           <View style={[styles.body, {backgroundColor: 'rgb(20, 35, 70)'}]}>
             <FlatList
               data={this.state.data}
               renderItem={this.renderItem}
               keyExtractor={(item, index) => index.toString()}
-              // ItemSeparatorComponent={this.renderSeparator}
             />
           </View>
-          {/* </ScrollView> */}
         </SafeAreaView>
       </View>
     );

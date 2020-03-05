@@ -309,7 +309,7 @@ class Demo extends Component {
       userInfo.username === this.state.username &&
       userInfo.password === this.state.password
     ) {
-      alert('Loged In Success');
+      // alert('Loged In Success');
       // await AsyncStorage.setItem('isLoggedIn', '1');
       this.props.navigation.navigate('Berita');
     } else {

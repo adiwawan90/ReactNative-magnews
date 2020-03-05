@@ -1,4 +1,4 @@
-package com.rnnewsapp;
+package com.magnews;
 
 import com.facebook.react.ReactActivity;
 

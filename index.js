@@ -15,9 +15,9 @@ class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {currentScreen: 'Splash'};
-    console.log('start doing some task 3 s');
+    // console.log('start doing some task 3 s');
     setTimeout(() => {
-      console.log('Done some task setelah 3 s');
+      // console.log('Done some task setelah 3 s');
       this.setState({currentScreen: 'Login'});
     }, 3000);
   }
