@@ -1,29 +1,31 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+// import {Platform, StyleSheet, Text, View} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import Login from './src/components/Login';
 import Home from './src/screens/HomePage';
 import Splash from './src/components/Splash';
+import Details from './src/screens/Details';
 
 const RootStack = createAppContainer(
   createStackNavigator(
     {
       Login: {screen: Login},
       Berita: {screen: Home},
+      Details: {screen: Details},
     },
     {
       initialRouteName: 'Login',
       defaultNavigationOption: {
-        // headerStyle: {
-        // backgroundColor: '#1e90ff',
-        // opacity: 0,
-        // },
-        // headerTintColor: '#fff',
-        // headerTitleStyle: {
-        //   textAlign: 'center',
-        //   flex: 1,
-        // },
+        headerStyle: {
+          backgroundColor: '#1e90ff',
+          opacity: 0,
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          textAlign: 'center',
+          flex: 1,
+        },
       },
     },
   ),

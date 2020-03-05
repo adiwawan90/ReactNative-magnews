@@ -21,21 +21,15 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 class HomePage extends Component {
-  // static navigationOptions = {
-  //   title: 'Magnus News App',
-  //   headerStyle: {
-  //     backgroundColor: '#73C6B6',
-  //   },
-  // };
+  static navigationOptions = {
+    title: 'Magnus News App',
+    headerStyle: {
+      backgroundColor: '#73C6B6',
+    },
+  };
   static navigationOptions = {
     headerShown: false,
   };
@@ -45,6 +39,10 @@ class HomePage extends Component {
       data: [],
       isLoading: true,
     };
+  }
+
+  clickedItem(itemValue) {
+    this.props.navigation.navigate('Details', {item: itemValue});
   }
 
   renderItem = ({item}) => {
@@ -59,9 +57,7 @@ class HomePage extends Component {
             marginVertical: 5,
           },
         ]}
-        onPress={() => {
-          Linking.openURL(item.link);
-        }}>
+        onPress={this.clickedItem.bind(this, item)}>
         <Image
           style={{width: 100, height: 100, borderRadius: 4, margin: 5}}
           source={{uri: item.image}}
