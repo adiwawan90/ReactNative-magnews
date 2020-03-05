@@ -77,20 +77,32 @@ class HomePage extends Component {
     );
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const url = 'http://www.magnusdigital.co.id/soal/news.json';
 
-    fetch(url)
-      .then(response => response.json())
-      .then(responseJson => {
-        this.setState({
-          data: responseJson.politik,
-          isLoading: false,
-        });
-      })
-      .catch(error => {
-        console.log(error);
+    try {
+      const response = await fetch(url);
+      const json = await response.json();
+      this.setState({
+        data: json.politik,
+        isLoading: false,
       });
+    } catch (error) {
+      console.log(error);
+      return alert(error);
+    }
+
+    // fetch(url)
+    //   .then(response => response.json())
+    //   .then(responseJson => {
+    //     this.setState({
+    //       data: responseJson.politik,
+    //       isLoading: false,
+    //     });
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //   });
   }
 
   render() {
