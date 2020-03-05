@@ -78,7 +78,7 @@ class HomePage extends Component {
   };
 
   async componentDidMount() {
-    const url = 'http://www.magnusdigital.co.id/soal/news.json';
+    const url = 'https://www.magnusdigital.co.id/soal/news.json';
 
     try {
       const response = await fetch(url);
